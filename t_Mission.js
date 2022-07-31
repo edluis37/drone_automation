@@ -11,7 +11,7 @@ const readline = require('readline'),
   prefix = 'Tello Mission> ';
 
 
-//const trimNewlines = require('trim-newlines');
+
 const fs = require('fs')
 const commandErr = new Error('Tello Command Error');
 
@@ -92,7 +92,7 @@ async function doTelloCommandWithRetry (command) {
         console.log('Re-Trying', command, i);
         }
       var message = await doTelloCommand(new Buffer(command));
-//      console.log(message);
+
       break;
     } catch (err) {
       console.log(err.message);
@@ -109,7 +109,7 @@ async function promptAfterDelay (delay) {
 }
 
 console.log('---------------------------------------');
-console.log('Tello Command File Processor');
+console.log('T Command File Processor');
 console.log('Enter a File name to Run a Mission');
 console.log('Enter quit or ctrl-c to quit');
 console.log('---------------------------------------');
@@ -133,10 +133,9 @@ function doMission (filename) {
 	   commandTimeEst = commandDelays.get(commandCode);
 	   console.log('Estimated Delay ', delay);
 	}
-    promptAfterDelay(delay + commandTimeEst); //give time for last command to finish
+    promptAfterDelay(delay + commandTimeEst); 
 }
 
-//doMission ('./telloNoFly.txt');
 
 rl.on('line', (input) => {
   fileName = input.trim();
@@ -150,7 +149,7 @@ rl.on('line', (input) => {
       doMission (fileName);
       break;
   }
-//  rl.prompt();
+
 }).on('close', function() {
   console.log('Exiting Mission Processor');
   process.exit(0);
