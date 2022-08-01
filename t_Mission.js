@@ -91,7 +91,7 @@ async function doTelloCommandWithRetry (command) {
         console.log('Trying', command); } else {
         console.log('Re-Trying', command, i);
         }
-      var message = await doTelloCommand(new Buffer(command));
+      var message = await doTelloCommand(new Buffer.from(command));
 
       break;
     } catch (err) {
