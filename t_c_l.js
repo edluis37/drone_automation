@@ -2,7 +2,7 @@
   Based On  
 	Rzye Tello
 	http://www.ryzerobotics.com
-Luis Amaya Software Developer, written with educational purposes only.
+Luis Amaya Software Developer, written for educational purposes only.
 UK -london/ 2022
 
 */
