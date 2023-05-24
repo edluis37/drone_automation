@@ -20,13 +20,13 @@ Instructions:
 
 	down <distance>: Sends a command to the drone to descend by the specified distance (in cm).
 
-	forward <distance>: Sends a command to the drone to move forward by the specified distance (in meters).
+	forward <distance>: Sends a command to the drone to move forward by the specified distance (in cm).
 
-	backward <distance>: Sends a command to the drone to move backward by the specified distance (in meters).
+	backward <distance>: Sends a command to the drone to move backward by the specified distance (in cm).
 
-	left <distance>: Sends a command to the drone to move to the left by the specified distance (in meters).
+	left <distance>: Sends a command to the drone to move to the left by the specified distance (in cm).
 
-	right <distance>: Sends a command to the drone to move to the right by the specified distance (in meters).
+	right <distance>: Sends a command to the drone to move to the right by the specified distance (in cm).
 
 	rotate <angle>: Sends a command to the drone to rotate by the specified angle (in degrees).
 
