@@ -19,7 +19,7 @@ var HOST = '192.168.10.1';
 // * These lines define variables PORT and HOST with values 8889 and '192.168.10.1', respectively.
 
 
-const dgram = ('dgram'); require
+const dgram = require('dgram'); 
 const client = dgram.createSocket('udp4'); 
 
 // * This code imports the dgram module, which provides support for UDP (User Datagram Protocol) network communication.
@@ -53,10 +53,25 @@ console.log('---------------------------------------');
 rl.on('line', (input) => { 
     commandStr = input.trim(); 
     switch(commandStr) { 
-        case 'lol': 
-        client.close(); 
-        rl.close(); 
-        break; 
+        case 'lol':
+            console.log('Command: land');
+            client.send('land', 0, 4, PORT, HOST, function (err, bytes) {
+              if (err) throw err;
+            });
+              client.close();
+              rl.close();
+              break;
+              case 'cool':
+                console.log('Command: takeoff');
+                client.send('takeoff', 0, 7, PORT, HOST, function (err, bytes) {
+                  if (err) throw err;
+                });
+        
+              case 'f':
+                  console.log('Command: forward 100');
+                  client.send('forward 100', 0, 11, PORT, HOST, function (err, bytes) {
+                    if (err) throw err;
+                  }); 
     default: 
     console.log(`Command: ${commandStr}`); 
     client.send(commandStr, 0, commandStr.length, PORT, HOST, function(err, bytes) { if (err) throw err; }); 
@@ -72,7 +87,7 @@ rl.on('line', (input) => {
 
 
 
-console.log(prefix + 'Enter Commands.'); 
+console.log(prefix + 'Input command to start the SDK mode.'); 
 rl.setPrompt(prefix, prefix.length); 
 rl.prompt(); 
 
