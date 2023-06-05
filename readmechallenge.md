@@ -10,7 +10,7 @@ Instructions:
 
 2.	Your challenge is to extend the existing code to include additional commands for drone control.
 
-3.	Implement the following commands:
+3.	Implement 3 commands from the list bellow:
 
 	takeoff: Sends a command to the drone to initiate takeoff.
 
