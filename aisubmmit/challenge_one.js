@@ -67,11 +67,7 @@ rl.on('line', (input) => {
                   if (err) throw err;
                 });
         
-              case 'f':
-                  console.log('Command: forward 100');
-                  client.send('forward 100', 0, 11, PORT, HOST, function (err, bytes) {
-                    if (err) throw err;
-                  }); 
+              //WRITE YOUR CODE HERE!...... 
     default: 
     console.log(`Command: ${commandStr}`); 
     client.send(commandStr, 0, commandStr.length, PORT, HOST, function(err, bytes) { if (err) throw err; }); 
